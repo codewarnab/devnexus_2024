@@ -1,6 +1,8 @@
 import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
-
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,6 +11,17 @@ const config: Config = {
   ],
   darkMode: "class",
   theme: {
+    animation: {
+      "meteor-effect": "meteor 5s linear infinite",
+    },
+    keyframes: {
+      meteor: {
+        "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+        "70%": { opacity: "1" },
+        "100%": {
+          transform: "rotate(215deg) translateX(-500px)",
+          opacity: "0",
+        },},},
     fontFamily: {
       satoshi: ["Satoshi", "sans-serif"],
     },
@@ -19,7 +32,18 @@ const config: Config = {
       ...defaultTheme.screens,
     },
     extend: {
+     
+    
+     
+      
       colors: {
+        'color1': '#FF0000',
+        'color2': '#FF7F00',
+        'color3': '#FFFF00',
+        'color4': '#7FFF00',
+        'color5': '#00FFFF',
+        'color6': '#0000FF',
+        'color7': '#8B00FF',
         current: "currentColor",
         transparent: "transparent",
         white: "#FFFFFF",
@@ -318,6 +342,15 @@ const config: Config = {
         5: "0px 1px 5px rgba(0, 0, 0, 0.2)",
       },
       keyframes: {
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
+        gradientShift: {
+          '0%': { backgroundPosition: '0% 0%' },
+          '100%': { backgroundPosition: '100% 100%' },
+        },
         linspin: {
           "100%": { transform: "rotate(360deg)" },
         },
@@ -363,6 +396,9 @@ const config: Config = {
         },
       },
       animation: {
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+       
         linspin: "linspin 1568.2353ms linear infinite",
         easespin: "easespin 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both",
         "left-spin":
@@ -382,6 +418,21 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [addVariablesForColors,],
 };
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
+}
+
+
 export default config;
+
+
