@@ -74,7 +74,7 @@ const Header = (props: {
             <h1 className="mb-0.5 text-heading-5 font-bold text-dark dark:text-white">
               Dashboard
             </h1>
-            <p className="font-medium">Conversifi: Tailor-Made Chatbots for Your Unique Needs.</p>
+            <p className="font-medium">Botify: Tailor-Made Chatbots for Your Unique Needs.</p>
           </div>
         </div>
 

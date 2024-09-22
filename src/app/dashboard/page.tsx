@@ -5,7 +5,7 @@ import React from "react";
 
 export const metadata: Metadata = {
     title:
-        "Conversfi - get your business online with our dashboard kit",
+        "Botify - get your business online with our dashboard kit",
     description: "get insights on your business with our dashboard kit",
 };
 
