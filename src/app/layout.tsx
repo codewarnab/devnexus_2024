@@ -6,7 +6,7 @@ import "../css/style.css";
 import React, { useEffect, useState } from "react";
 import Loader from "../components/common/Loader";
 import Background from "../components/Bg";
-
+import { ClerkProvider } from "@clerk/nextjs";
 
 
 
@@ -26,7 +26,7 @@ export default function RootLayout({
 
   return (
 
-
+<ClerkProvider>
     <html lang="en">
       <body suppressHydrationWarning={true}>
         <Background />
@@ -35,6 +35,7 @@ export default function RootLayout({
 
       </body>
     </html>
+    </ClerkProvider>
 
   );
 }

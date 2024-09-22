@@ -271,6 +271,7 @@ const SettingBoxes = () => {
                   className="relative mb-5.5 block w-full cursor-pointer appearance-none rounded-xl border border-dashed border-gray-4 bg-gray-2 px-4 py-4 hover:border-primary dark:border-dark-3 dark:bg-dark-2 dark:hover:border-primary sm:py-7.5"
                 >
                   <input
+                  title="etc"
                     type="file"
                     name="profilePhoto"
                     id="profilePhoto"
