@@ -1,9 +1,13 @@
 import React from 'react'
+import DefaultLayout from '../../components/Layouts/DefaultLaout'
 
 const page = () => {
-  return (
-    <div>page</div>
-  )
+    return (
+        <DefaultLayout>
+            page
+            
+        </DefaultLayout>
+    )
 }
 
 export default page
