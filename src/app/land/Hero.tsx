@@ -60,7 +60,7 @@ export default function Component() {
               </p>
               <div>
                 <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105">
-                  Get Started
+                 <Link href='/dashboard'> Get Started</Link> 
                 </Button>
               </div>
               <div className="flex space-x-6 text-gray-400">
@@ -94,7 +94,7 @@ export default function Component() {
                     <p className="text-sm">Hello! Welcome to EiffelTower.com. How can I assist you today?</p>
                   </div>
                   <div className="bg-blue-600 p-4 rounded-lg ml-8">
-                    <p className="text-sm">Hi! I&apos;d like to book tickets for tomorrow.</p>
+                    <p className="text-sm">Hi! I d like to book tickets for tomorrow.</p>
                   </div>
                   <div className="bg-gray-700 p-4 rounded-lg">
                     <p className="text-sm">I can help you with that. How many tickets would you like to book?</p>
