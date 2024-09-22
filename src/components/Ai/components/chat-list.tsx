@@ -1,6 +1,6 @@
 import { Separator } from '../components/separator'
-import { UIState } from '@/lib/chat/actionsfirst'
-import { Session } from '@/lib/types'
+import { UIState } from '../../../../lib/chat/actionsfirst'
+import { Session } from '../../../../lib/types'
 
 
 export interface ChatList {

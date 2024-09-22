@@ -33,7 +33,7 @@ const addOns = [
   { name: "Souvenir Photo", price: 8 },
 ]
 
-export default function ZooTicketBooking({ zooName }: ZooTicketBookingProps = { zooName: 'WildLife Wonders Zoo' }) {
+export default function ZooTicketBooking({ zooName = 'WildLife Wonders Zoo' }: ZooTicketBookingProps) {
   const [isBooking, setIsBooking] = useState(false)
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const [date, setDate] = useState<Date | undefined>(new Date())
@@ -46,6 +46,7 @@ export default function ZooTicketBooking({ zooName }: ZooTicketBookingProps = { 
 
   useEffect(() => {
     calculateTotalPrice()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedTickets, selectedAddOns, groupSize])
 
   const calculateTotalPrice = () => {
@@ -82,7 +83,7 @@ export default function ZooTicketBooking({ zooName }: ZooTicketBookingProps = { 
   }
 
   return (
-    <div className="max-w-md mx-auto backdrop-blur-xl  border shadow-xl rounded-xl overflow-hidden">
+    <div className="max-w-md mx-auto backdrop-blur-xl border shadow-xl rounded-xl overflow-hidden">
       <div className="p-6 space-y-6">
         <h2 className="text-3xl font-bold text-center text-primary">{zooName} Tickets</h2>
         
@@ -108,7 +109,7 @@ export default function ZooTicketBooking({ zooName }: ZooTicketBookingProps = { 
                   <Calendar
                     mode="single"
                     selected={date}
-                    onSelect={setDate}
+                    onSelect={(newDate) => setDate(newDate)}
                     initialFocus
                   />
                 </DialogContent>
@@ -159,7 +160,7 @@ export default function ZooTicketBooking({ zooName }: ZooTicketBookingProps = { 
           {addOns.map((addOn) => (
             <div key={addOn.name} className="flex items-center space-x-2">
               <input
-              title='da'
+              title='abc'
                 type="checkbox"
                 id={addOn.name}
                 checked={selectedAddOns.includes(addOn.name)}
