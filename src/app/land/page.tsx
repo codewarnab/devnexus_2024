@@ -4,7 +4,7 @@ import Cards from './cards'
 import Screenshot from './screens'
 import Footer from './footer'
 
-const page = () => {
+const Landing1 = () => {
   return (
 
     <div>
@@ -16,4 +16,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Landing1

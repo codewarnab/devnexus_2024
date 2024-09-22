@@ -1,8 +1,9 @@
 import React from 'react'
+import Landing1 from './land/page'
 
 function landing() {
   return (
-    <div>landing</div>
+    <Landing1 />
   )
 }
 
