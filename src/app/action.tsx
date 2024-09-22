@@ -7,7 +7,7 @@ export async function refreshHistory(path: string) {
 }
 
 export async function getMissingKeys() {
-  const keysRequired: string[] = ['Google_api_key']
+  const keysRequired: string[] = ['GOOGLE_API_KEY']
   return keysRequired
     .map(key => (process.env[key] ? '' : key))
     .filter(key => key !== '')
