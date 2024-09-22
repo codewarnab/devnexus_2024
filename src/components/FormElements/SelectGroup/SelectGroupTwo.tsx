@@ -1,21 +1,47 @@
 "use client";
-import React, { useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-const SelectGroupTwo: React.FC = () => {
-  const [selectedOption, setSelectedOption] = useState<string>("");
-  const [isOptionSelected, setIsOptionSelected] = useState<boolean>(false);
+interface SelectGroupTwoProps {
+  label: string;
+  options: { value: string; label: string }[];
+  placeholder?: string;
+  defaultValue?: string;
+  value?: string; // Value from the parent component to control the select state
+  onChange?: (value: string) => void;
+  error?: string;
+}
 
-  const changeTextColor = () => {
-    setIsOptionSelected(true);
+const SelectGroupTwo: React.FC<SelectGroupTwoProps> = ({
+  label,
+  options,
+  placeholder = "Select an option",
+  value = "", // Default to an empty string if not provided
+  onChange,
+  error,
+}) => {
+  const [selectedOption, setSelectedOption] = useState<string>(value);
+
+  useEffect(() => {
+    // Update local state whenever the controlled value changes
+    setSelectedOption(value);
+  }, [value]);
+
+  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const newValue = e.target.value;
+    setSelectedOption(newValue); // Update local state
+    if (onChange) {
+      onChange(newValue); // Call parent onChange handler
+    }
   };
 
   return (
     <div>
-      <label className="mb-3 block text-body-sm font-medium text-dark dark:text-white">
-        Select Country
+      <label className="mb-3 ml-3 block text-body-sm font-medium text-dark dark:text-white">
+        {label}
       </label>
 
-      <div className="relative z-20 rounded-[7px] bg-white dark:bg-dark-2">
+      <div className={`relative z-20 rounded-[7px] bg-white dark:bg-dark-2 ${error ? 'border-red-500' : ''}`}>
         <span className="absolute left-4 top-1/2 z-30 -translate-y-1/2">
           <svg
             width="20"
@@ -24,14 +50,14 @@ const SelectGroupTwo: React.FC = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <g clipPath="url(#clip0_1680_14985)">
+            <g clipPath="url(#clip0)">
               <path
                 d="M9.99935 18.3334C5.39697 18.3334 1.66602 14.6024 1.66602 10.0001C1.66602 5.39771 5.39697 1.66675 9.99935 1.66675C14.6017 1.66675 18.3327 5.39771 18.3327 10.0001C18.3327 14.6024 14.6017 18.3334 9.99935 18.3334ZM8.09103 16.3896C7.28887 14.6883 6.79712 12.8119 6.68877 10.8334H3.38426C3.71435 13.4805 5.59634 15.6457 8.09103 16.3896ZM8.35827 10.8334C8.4836 12.8657 9.06418 14.7748 9.99935 16.4601C10.9345 14.7748 11.5151 12.8657 11.6404 10.8334H8.35827ZM16.6144 10.8334H13.3099C13.2016 12.8119 12.7098 14.6883 11.9077 16.3896C14.4023 15.6457 16.2844 13.4805 16.6144 10.8334ZM3.38426 9.16675H6.68877C6.79712 7.18822 7.28887 5.31181 8.09103 3.61055C5.59634 4.35452 3.71435 6.51966 3.38426 9.16675ZM8.35827 9.16675H11.6404C11.5151 7.13443 10.9345 5.22529 9.99935 3.54007C9.06418 5.22529 8.4836 7.13443 8.35827 9.16675ZM11.9077 3.61055C12.7098 5.31181 13.2016 7.18822 13.3099 9.16675H16.6144C16.2844 6.51966 14.4023 4.35452 11.9077 3.61055Z"
                 fill="#6B7280"
               />
             </g>
             <defs>
-              <clipPath id="clip0_1680_14985">
+              <clipPath id="clip0">
                 <rect width="20" height="20" fill="white" />
               </clipPath>
             </defs>
@@ -40,23 +66,22 @@ const SelectGroupTwo: React.FC = () => {
 
         <select
           value={selectedOption}
-          onChange={(e) => {
-            setSelectedOption(e.target.value);
-            changeTextColor();
-          }}
-          className={`relative z-10 w-full appearance-none rounded-[7px] border border-stroke bg-transparent px-11.5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-dark-3 dark:bg-dark-2 ${
-            isOptionSelected ? "text-dark dark:text-white" : ""
-          }`}
+          onChange={handleChange}
+          className={`relative z-10 w-full appearance-none rounded-[7px] border border-stroke bg-transparent px-11.5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-dark-3 dark:bg-dark-2 ${selectedOption ? "text-dark dark:text-white" : ""}`}
+          aria-label={label}
         >
-          <option value="UnitedStates" className="text-dark-5 dark:text-dark-6">
-            United States
+          <option value="" disabled hidden>
+            {placeholder}
           </option>
-          <option value="UK" className="text-dark-5 dark:text-dark-6">
-            UK
-          </option>
-          <option value="Canada" className="text-dark-5 dark:text-dark-6">
-            Canada
-          </option>
+          {options.map((option) => (
+            <option
+              key={option.value}
+              value={option.value}
+              className="text-dark-5 dark:text-dark-6"
+            >
+              {option.label}
+            </option>
+          ))}
         </select>
 
         <span className="absolute right-4.5 top-1/2 z-10 -translate-y-1/2 text-dark-4 dark:text-dark-6">
@@ -77,6 +102,20 @@ const SelectGroupTwo: React.FC = () => {
           </svg>
         </span>
       </div>
+
+      <AnimatePresence>
+        {error && (
+          <motion.p
+            className="mt-2 text-red-500 dark:text-red-400 text-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {error}
+          </motion.p>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
