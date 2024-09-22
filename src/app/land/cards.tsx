@@ -34,10 +34,6 @@ export default function Cards() {
       title: "Analytics and Insights",
       description: "Gain valuable insights into user interactions with detailed analytics. Track visitor behavior, optimize the user journey, and improve conversions effortlessly.",
     },
-    {
-      title: "Secure Transactions",
-      description: "Protect your visitors with top-tier security for transactions. Our chatbot guarantees safe and encrypted payment processes, giving peace of mind to both you and your customers.",
-    },
   ]
 
   return (
