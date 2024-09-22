@@ -3,7 +3,7 @@ import * as React from 'react'
 import { PromptForm } from '../components/prompt-form'
 import { ButtonScrollToBottom } from '../components/button-scroll-to-bottom'
 import { useActions, useUIState } from 'ai/rsc'
-import type { AI } from '@/lib/chat/actionsfirst'
+import type { AI } from '../../../../lib/chat/actionsfirst'
 import { nanoid } from 'nanoid'
 import { UserMessage } from '../components/message'
 import { Button } from "@/components/ui/button"
@@ -31,7 +31,7 @@ export function ChatPanel({
     { heading: 'Attractions', message: 'Show me the most attractive places in this zoo' },
     { heading: 'Book Ticket', message: 'I want to book a ticket' },
     { heading: 'Navigation', message: 'Show me the map' },
-    { heading: 'Animal Details', message: 'Give me details about dinosaurs' },
+    { heading: 'Animal Details', message: 'Give me animal details ' },
     { heading: 'Complain', message: 'I want to raise a complaint' }
   ]
 
@@ -49,7 +49,7 @@ export function ChatPanel({
   }
 
   return (
-    <div className="fixed inset-x-0 bottom-0 w-full bg-gradient-to-b from-muted/30 from-0% to-muted/30 to-50% duration-300 ease-in-out animate-in dark:from-background/10 dark:from-10% dark:to-background/80 peer-[[data-state=open]]:group-[]:lg:pl-[250px] peer-[[data-state=open]]:group-[]:xl:pl-[300px]">
+    <div className="fixed inset-x-0 bottom-0 w-full   border-t-0  backdrop-blur-lg ">
       <ButtonScrollToBottom
         isAtBottom={isAtBottom}
         scrollToBottom={scrollToBottom}
@@ -57,7 +57,7 @@ export function ChatPanel({
 
       <div className="mx-auto sm:max-w-2xl sm:px-4">
         <div className="mb-4 px-4 sm:px-0 overflow-x-auto">
-          <div className="flex space-x-2 py-2">
+          <div className="flex space-x-2 ">
             {exampleMessages.map((example) => (
               <Button
                 key={example.heading}
@@ -72,7 +72,7 @@ export function ChatPanel({
           </div>
         </div>
 
-        <div className="space-y-4 bg-background px-4 py-2 shadow-lg md:py-4">
+        <div className="space-y-2 bg-background px-4  shadow-lg md:py-4">
           <PromptForm input={input} setInput={setInput} />
         </div>
       </div>

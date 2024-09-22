@@ -1,4 +1,5 @@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import Background1 from "../Background"
 
 const ticketPrices = [
   { type: 'Adult', weekday: 25, weekend: 30 },
@@ -9,7 +10,8 @@ const ticketPrices = [
 
 export default function TicketPriceChart() {
   return (
-    <div>
+    <div className=" ">
+      <Background1 />
       <h2 className="text-2xl font-bold mb-4">Ticket Prices</h2>
       <Table>
         <TableHeader>

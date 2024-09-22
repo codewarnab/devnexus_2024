@@ -1,4 +1,4 @@
-/** @type {import("next").NextConfig} */
+
 const nextConfig = {
   images: {
     domains: ["localhost"],
@@ -16,6 +16,11 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "avatars.githubusercontent.com",
+        port: ""
+      },
+      {
+        protocol: "https",
+        hostname: "wallpaperaccess.com",
         port: ""
       },
       {

@@ -63,7 +63,7 @@ export function Chat({ id, className, session, missingKeys }: ChatProps) {
   }, [missingKeys])
 
   return (
-    <div className="flex flex-col h-screen bg-background">
+    <div className="flex flex-col h-screen bg-background text-dark dark:text-white">
      <ZooHeader />
       <MissingApiKeyBanner missingKeys={missingKeys} />
       <div className="flex-grow overflow-auto" ref={scrollRef}>

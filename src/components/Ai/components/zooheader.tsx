@@ -5,7 +5,7 @@ import DarkModeSwitcher from '@/components/Header/DarkModeSwitcher';
 
 export function ZooHeader() {
   return (
-    <header className="relative bg-gradient-to-r from-green-600 to-green-800 text-white py-6 px-4 sm:px-6 shadow-lg overflow-hidden">
+    <header className="relative  backdrop-blur-lg  text-dark dark:text-white py-6 px-4 sm:px-6 shadow-lg overflow-hidden">
       {/* Background image with opacity and blur */}
       <div className="absolute inset-0 opacity-20">
         <Image
@@ -29,19 +29,10 @@ export function ZooHeader() {
           {/* Navigation with DarkModeSwitcher in line */}
           <nav className="flex flex-wrap items-center space-x-2 sm:space-x-4">
             {/* Hours button */}
-            <Button variant="ghost" size="sm" className="flex items-center text-white hover:text-yellow-300 transition-colors">
-              <Calendar className="h-5 w-5 mr-1" />
-              <span className="hidden sm:inline">Hours</span>
-            </Button>
-
-            {/* Info button */}
-            <Button variant="ghost" size="sm" className="flex items-center text-white hover:text-yellow-300 transition-colors">
-              <Info className="h-5 w-5 mr-1" />
-              <span className="hidden sm:inline">Info</span>
-            </Button>
+           
 
             {/* Dark Mode Toggle */}
-           
+           <DarkModeSwitcher />
           </nav>
         </div>
       </div>
