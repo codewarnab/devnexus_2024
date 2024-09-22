@@ -94,7 +94,7 @@ export default function Component() {
                     <p className="text-sm">Hello! Welcome to EiffelTower.com. How can I assist you today?</p>
                   </div>
                   <div className="bg-blue-600 p-4 rounded-lg ml-8">
-                    <p className="text-sm">Hi! I'd like to book tickets for tomorrow.</p>
+                    <p className="text-sm">Hi! I&apos;d like to book tickets for tomorrow.</p>
                   </div>
                   <div className="bg-gray-700 p-4 rounded-lg">
                     <p className="text-sm">I can help you with that. How many tickets would you like to book?</p>

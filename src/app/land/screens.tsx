@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '../../components/ui/button'
+import Image from 'next/image'
 
 export default function Screenshot() {
   const [currentFeature, setCurrentFeature] = useState(0)
@@ -52,10 +53,12 @@ export default function Screenshot() {
             >
               {features.map((feature, index) => (
                 <div key={index} className="w-full flex-shrink-0">
-                  <img
+                  <Image
                     src={feature.image}
                     alt={feature.title}
-                    className="w-full h-[400px] object-cover"
+                    width={600}
+                    height={400}
+                    layout="responsive"
                   />
                 </div>
               ))}
