@@ -40,7 +40,7 @@ export default function Screenshot() {
         <h2 className="text-3xl font-extrabold text-white text-center mb-12">
           Experience the Power of{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
-            CONVERSIFI
+          BOTIFY
           </span>
         </h2>
         <div className="relative">
@@ -89,6 +89,7 @@ export default function Screenshot() {
         <div className="flex justify-center mt-6 space-x-2">
           {features.map((_, index) => (
             <button
+            title='abc'
               key={index}
               className={`w-3 h-3 rounded-full ${
                 index === currentFeature ? 'bg-blue-500' : 'bg-gray-600'

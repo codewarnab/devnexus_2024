@@ -1,6 +1,7 @@
 'use client';
+
 import React from "react"
-import { Button } from "../../components/ui/button"
+import { Button } from "@/components/ui/button"
 import { MessageSquare, Ticket, Globe, Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -11,17 +12,10 @@ export default function Component() {
 
   return (
     <div className="bg-gray-900 text-white min-h-screen flex flex-col">
-      <nav className="bg-gray-800 py-4">
+      <nav className=" backdrop-blur-lg py-4 sticky top-0 z-10">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center">
-            {/* <Image
-                src="/conversifi.svg"
-              alt="CONVERSIFI logo"
-              width={40}
-              height={40}
-              className="h-8 w-auto mr-2"
-            /> */}
-            <span className="text-xl font-bold">CONVERSIFI</span>
+            <span className="text-xl font-bold">BOTIFY</span>
           </div>
           <div className="hidden md:flex space-x-6">
             <Link href="#" className="hover:text-blue-400 transition-colors">Home</Link>
@@ -31,14 +25,18 @@ export default function Component() {
             <Link href="#" className="hover:text-blue-400 transition-colors">Contact</Link>
           </div>
           <div className="md:hidden">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white focus:outline-none">
+            <button 
+              onClick={() => setIsMenuOpen(!isMenuOpen)} 
+              className="text-white focus:outline-none"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
       </nav>
       {isMenuOpen && (
-        <div className="md:hidden bg-gray-800 py-2">
+        <div className="md:hidden bg-gray-800 py-2 sticky top-16 z-10">
           <div className="container mx-auto px-4 flex flex-col space-y-2">
             <Link href="#" className="hover:text-blue-400 transition-colors py-2">Home</Link>
             <Link href="#" className="hover:text-blue-400 transition-colors py-2">Features</Link>
@@ -53,8 +51,8 @@ export default function Component() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight animate-pulse">
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">CONVERSIFI</span>
-                <span className="block">Your Tourist Site's</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">BOTIFY</span>
+                <span className="block">Your Tourist Sites</span>
                 <span className="block">AI Concierge</span>
               </h1>
               <p className="text-xl text-gray-300">
@@ -105,7 +103,7 @@ export default function Component() {
                     <p className="text-sm">2 adult tickets, please.</p>
                   </div>
                   <div className="bg-gray-700 p-4 rounded-lg">
-                    <p className="text-sm">Great! I've found 2 adult tickets for tomorrow. Would you like to proceed with the booking?</p>
+                    <p className="text-sm">Great! Ive found 2 adult tickets for tomorrow. Would you like to proceed with the booking?</p>
                   </div>
                 </div>
               </div>
