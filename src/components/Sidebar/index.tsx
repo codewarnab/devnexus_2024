@@ -334,6 +334,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           </Link>
 
           <button
+          title="etc"
             onClick={() => setSidebarOpen(!sidebarOpen)}
             className="block lg:hidden"
           >
