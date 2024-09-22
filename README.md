@@ -1,62 +1,45 @@
-# NextAdmin - Next.js Admin Dashboard Template and Components
+# Botify
 
-**NextAdmin** is a Free, open-source Next.js admin dashboard toolkit featuring 200+ UI components and templates that come with pre-built elements, components, pages, high-quality design, integrations, and much more to help you create powerful admin dashboards with ease.
+This project is built upon the **[NextAdmin](https://demo.nextadmin.co/)** template. We have used this as our base UI framework, customizing and extending it with additional components and features.
 
+## Project Overview
 
-[![nextjs admin template](https://cdn.pimjo.com/nextadmin-2.png)](https://nextadmin.co/)
+This project leverages the **NextAdmin** template from **[Next.js Templates](https://nextjstemplates.com/templates/nextadmin)** as the primary foundation of our user interface. We selected this template because of its robust design system, responsive components, and the seamless integration it offers with Next.js. It allowed us to quickly set up a scalable and maintainable frontend for our application.
 
+### Template: **NextAdmin**
 
-**NextAdmin** provides you with a diverse set of dashboard UI components, elements, examples and pages necessary for creating top-notch admin panels or dashboards with **powerful** features and integrations. Whether you are working on a complex web application or a basic website, **NextAdmin** has got you covered.
+- **Source**: [Next.js Templates - NextAdmin](https://nextjstemplates.com/templates/nextadmin)
+- **Demo**: [NextAdmin Demo](https://demo.nextadmin.co/)
 
-### [✨ Visit Website](https://nextadmin.co/)
-### [🚀 Live Demo](https://demo.nextadmin.co/)
-### [📖 Docs](https://docs.nextadmin.co/)
+The **NextAdmin** template provided a clean, highly customizable design that was crucial for building the frontend of our application. It became the backbone of our UI, which we modified and enhanced to suit our project's specific needs.
 
-By leveraging the latest features of **Next.js 14** and key functionalities like **server-side rendering (SSR)**, **static site generation (SSG)**, and seamless **API route integration**, **NextAdmin** ensures optimal performance. With the added benefits of **React 18 advancements** and **TypeScript** reliability, **NextAdmin** is the ultimate choice to kickstart your **Next.js** project efficiently.
+---
 
-## Installation
+## Deployed Application
 
-1. Download/fork/clone the repo and Once you're in the correct directory, it's time to install all the necessary dependencies. You can do this by typing the following command:
+You can view the live application at: [Botify Deployed Link](https://devnexus-2024.vercel.app/)
 
-```
-npm install
-```
-If you're using **Yarn** as your package manager, the command will be:
+---
 
-```
-yarn install
-```
+## Additional Tools and Features
 
-2. Okay, you're almost there. Now all you need to do is start the development server. If you're using **npm**, the command is:
+Alongside the **NextAdmin** template, we also leveraged generative UI tools and AI-based solutions for efficiently building out UI components and solving bugs during development:
 
-```
-npm run dev
-```
-And if you're using **Yarn**, it's:
+- **[v0.dev/chat](https://v0.dev/chat)**: Used for generating various UI components.
+- **[Claude.ai](https://claude.ai/)**: Assisted in debugging and resolving UI-related issues with generative suggestions.
 
-```
-yarn dev
-```
+These tools allowed us to accelerate the development process, especially for complex or repetitive UI components, while maintaining consistency with the design system established by **NextAdmin**.
 
-And voila! You're now ready to start developing. **Happy coding**!
+---
 
-## Highlighted Features
-**200+ Next.js Dashboard Ul Components and Templates** - includes a variety of prebuilt **Ul elements, components, pages, and examples** crafted with a high-quality design.
-Additionally, features seamless **essential integrations and extensive functionalities**.
+## Tech Stack
 
-- A library of over **200** professional dashboard UI components and elements.
-- Five distinctive dashboard variations, catering to diverse use-cases.
-- A comprehensive set of essential dashboard and admin pages.
-- More than **45** **Next.js** files, ready for use.
-- Styling facilitated by **Tailwind CSS** files.
-- A design that resonates premium quality and high aesthetics.
-- A handy UI kit with assets.
-- Over ten web apps complete with examples.
-- Support for both **dark mode** and **light mode**.
-- Essential integrations including - Authentication (**NextAuth**), Database (**Postgres** with **Prisma**), and Search (**Algolia**).
-- Detailed and user-friendly documentation.
-- Customizable plugins and add-ons.
-- **TypeScript** compatibility.
-- Plus, much more!
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Base UI Template**: [NextAdmin](https://demo.nextadmin.co/)
+- **Generative UI Tools**: [v0.dev](https://v0.dev/chat), [Claude.ai](https://claude.ai/)
+- **Languages**: TypeScript, JavaScript
+- **Backend**: Clerk authentication, Edge Store, MongoDB
+- **APIs**: Google Generative AI, GROQ
 
-All these features and more make **NextAdmin** a robust, well-rounded solution for all your dashboard development needs.
+---
+

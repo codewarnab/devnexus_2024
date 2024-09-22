@@ -9,8 +9,8 @@ interface InputGroupProps {
   value?: any;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
-  disabled?: boolean; 
-  name?: string; 
+  disabled?: boolean;
+  name?: string;
 }
 
 const InputGroup: React.FC<InputGroupProps> = ({

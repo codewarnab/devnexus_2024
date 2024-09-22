@@ -56,9 +56,13 @@ export default function Screenshot() {
             >
               {features.map((feature, index) => (
                 <div key={index} className="w-full flex-shrink-0">
-                  <div className="relative aspect-[16/9] w-full">
-                    <Image src={feature.image} alt={feature.title} fill className="object-cover" />
-                  </div>
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    width={600}
+                    height={400}
+                    layout="responsive"
+                  />
                 </div>
               ))}
             </motion.div>
