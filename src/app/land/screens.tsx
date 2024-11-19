@@ -44,7 +44,7 @@ export default function Screenshot() {
         <h2 className="mb-12 text-center text-3xl font-extrabold text-white">
           Experience the Power of{" "}
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            BOTIFY
+          CONVERSIFI
           </span>
         </h2>
         <div className="relative">

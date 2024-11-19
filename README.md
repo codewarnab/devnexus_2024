@@ -1,4 +1,4 @@
-# Botify
+# Conversifi
 
 This project is built upon the **[NextAdmin](https://demo.nextadmin.co/)** template. We have used this as our base UI framework, customizing and extending it with additional components and features.
 
@@ -17,7 +17,7 @@ The **NextAdmin** template provided a clean, highly customizable design that was
 
 ## Deployed Application
 
-You can view the live application at: [Botify Deployed Link](https://devnexus-2024.vercel.app/)
+You can view the live application at: [Conversifi Deployed Link](https://devnexus-2024.vercel.app/)
 
 ---
 
