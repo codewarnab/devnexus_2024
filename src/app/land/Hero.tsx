@@ -15,7 +15,7 @@ export default function Component() {
       <nav className=" backdrop-blur-lg py-4 sticky top-0 z-10">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center">
-            <span className="text-xl font-bold">BOTIFY</span>
+            <span className="text-xl font-bold">CONVERSIFI</span>
           </div>
           <div className="hidden md:flex space-x-6">
             <Link href="#" className="hover:text-blue-400 transition-colors">Home</Link>
@@ -51,7 +51,7 @@ export default function Component() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight animate-pulse">
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">BOTIFY</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">CONVERSIFI</span>
                 <span className="block">Your Tourist Sites</span>
                 <span className="block">AI Concierge</span>
               </h1>

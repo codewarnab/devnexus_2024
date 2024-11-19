@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
             <span className="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-5xl font-bold text-transparent">
-              Botify
+              Conversifi
             </span>
 
             <p className="text-base text-gray-400">
@@ -206,7 +206,7 @@ export default function Footer() {
         </div>
         <div className="mt-12 border-t border-gray-700 pt-8">
           <p className="text-base text-gray-400 xl:text-center">
-            &copy; 2023 BOTIFY, Inc. All rights reserved.
+            &copy; 2023 CONVERSIFI, Inc. All rights reserved.
           </p>
         </div>
       </div>
